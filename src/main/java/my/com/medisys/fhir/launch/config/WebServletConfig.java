@@ -26,6 +26,8 @@ public class WebServletConfig extends WebMvcConfigurerAdapter {
     
     @Bean
     //http://localhost:8080/fhir/dstu2/Patient
+    //http://localhost:8080/fhir/dstu2/Patient?family=Hossen
+    //http://localhost:8080/fhir/dstu2/Patient?family=Hossain
     public ServletRegistrationBean servletRegistrationBean(ApplicationContext context) {
         return new ServletRegistrationBean(new FhirRestServlet(), "/fhir/dstu2/*");
     }

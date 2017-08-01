@@ -51,22 +51,33 @@ public class PatientResourceProvider implements IResourceProvider {
      * Constructor, which pre-populates the provider with one resource instance.
      */
     public PatientResourceProvider() {
+        LinkedList<Patient> list0 = new LinkedList<Patient>();
+        LinkedList<Patient> list1 = new LinkedList<Patient>();
+        
         long resourceId = myNextId++;
         
-        Patient patient = new Patient();
-        patient.setId(Long.toString(resourceId));
-        patient.addIdentifier();
-        patient.getIdentifier().get(0).setSystem(new UriDt("urn:hapitest:mrns"));
-        patient.getIdentifier().get(0).setValue("00002");
-        patient.addName().addFamily("Test");
-        patient.getName().get(0).addGiven("PatientOne");
-        patient.setGender(AdministrativeGenderEnum.FEMALE);
+        Patient shahed = new Patient();
+        shahed.setId("998915");
+        shahed.addIdentifier();
+        shahed.getIdentifier().get(0).setSystem(new UriDt("urn:hapitest:mrns"));
+        shahed.getIdentifier().get(0).setValue("998915");
+        shahed.addName().addFamily("Hossain");
+        shahed.getName().get(0).addGiven("Md Shahed");
+        shahed.setGender(AdministrativeGenderEnum.MALE);
+        list0.add(shahed);
+        myIdToPatientVersions.put(resourceId, list0);
         
-        LinkedList<Patient> list = new LinkedList<Patient>();
-        list.add(patient);
-        
-        
-        myIdToPatientVersions.put(resourceId, list);
+        resourceId = myNextId++;
+        Patient shohel = new Patient();
+        shohel.setId("998916");
+        shohel.addIdentifier();
+        shohel.getIdentifier().get(0).setSystem(new UriDt("urn:hapitest:mrns"));
+        shohel.getIdentifier().get(0).setValue("998916");
+        shohel.addName().addFamily("Hossen");
+        shohel.getName().get(0).addGiven("Md Shohel");
+        shohel.setGender(AdministrativeGenderEnum.MALE);
+        list1.add(shohel);
+        myIdToPatientVersions.put(resourceId, list1);
         
     }
     
