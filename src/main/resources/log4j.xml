@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//LOGGER" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<log4j:configuration>
+<!-- 
+================================================================================
+log4j configuration
+================================================================================
+@author     Shahed Hossain<shahed@medisys.com.sa>
+@vendor     Medical Systems Co. Ltd
+@web        www.medisys.com.sa
+@version    1.0.00-SNAPSHOT
+@since      1.0.00-SNAPSHOT
+================================================================================
+-->
+    <appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="\${user.home}/.hmis/log/fhir/fhir.HMIS" />
+        <param name="threshold" value="${hisp.fltr.logr.log4j.threshold}" />
+        <param name="DatePattern" value="'.'ddMMMyyyy'.log'" />
+        <param name="Append" value="true" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="${hisp.fltr.logr.log4j.pattern}" />
+        </layout>
+    </appender>
+    
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out" />
+        <param name="threshold" value="${hisp.fltr.logr.log4j.threshold}" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="${hisp.fltr.logr.log4j.pattern}" />
+        </layout>
+    </appender>
+    
+    <category name="javax.servlet">
+        <priority value="${hisp.fltr.logr.log4j.severity}" />
+    </category>
+    
+    <category name="org.apache.activemq">
+        <priority value="${hisp.fltr.logr.log4j.severity}" />
+    </category>
+    
+    <category name="org.apache.catalina">
+        <priority value="${hisp.fltr.test.logr.log4j.severity}" />
+    </category>
+    
+    <category name="org.apache.camel">
+        <priority value="${hisp.fltr.logr.log4j.severity}" />
+    </category>
+    
+    <category name="org.jasypt">
+        <priority value="${hisp.fltr.logr.log4j.severity}" />
+    </category>
+    
+    <category name="org.quartz">
+        <priority value="${hisp.fltr.logr.log4j.severity}" />
+    </category>
+    
+    <category name="org.springframework">
+        <priority value="${hisp.fltr.logr.log4j.severity}" />
+    </category>
+    
+    <category name="org.thymeleaf">
+        <priority value="${hisp.fltr.logr.log4j.severity}" />
+    </category>
+    
+    <category name="my.com.medisys">
+        <priority value="${hisp.fltr.logr.log4j.priority}" />
+    </category>
+    
+    <category name="my.com.medisys.xlab.persis.mapper">
+        <priority value="${hisp.fltr.logr.log4j.priority}" />
+    </category>
+    
+    <root>
+        <priority value="${hisp.fltr.logr.log4j.priority}" />
+        <appender-ref ref="file" />
+        <appender-ref ref="console" />
+    </root>
+    
+</log4j:configuration>

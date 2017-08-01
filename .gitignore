@@ -1,0 +1,74 @@
+###############################################################
+# compiled source                                             #
+###############################################################
+*.o
+*.so
+*.suo
+*.com
+*.dll
+*.exe
+*.pdb
+*.pdf
+*.pyc
+*.class
+*.cache
+*.jasper
+*.jnilib
+*.dll.config
+
+###############################################################
+# eclipse config                                              #
+###############################################################
+/target/
+.project
+.settings/
+.classpath
+/ImportedClasses/
+/src/main/groovy/META-INF/
+
+###############################################################
+# archive file                                                #
+###############################################################
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+###############################################################
+# logs, temps and databases                                   #
+###############################################################
+/id_*
+*.log
+/run/
+/logs/
+*.sqlite
+*.js-temp-*
+activemq-data/
+/src/main/cmd/*/
+/src/main/ant/build.js
+/src/main/ant/phantomjs*
+/src/main/cmd/bootstrap.*
+/src/main/resources/Msc.*
+
+###############################################################
+# os generated files                                          #
+###############################################################
+._*
+Icon?
+.Trashes
+Thumbs.db
+.DS_Store*
+ehthumbs.db
+desktop.ini
+.Spotlight-V100
+
+###############################################################
+# allowed binary, archive and other files                     #
+###############################################################
+!/src/main/resources/icons
+!/src/main/resources/META-INF/jni/*
+!/src/main/resources/META-INF/resources/*/icons
