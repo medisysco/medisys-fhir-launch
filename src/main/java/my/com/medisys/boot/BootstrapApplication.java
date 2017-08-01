@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
- * @author    Shahed Hossain<shahed@medisys.com.sa>
+ * @author    Shahed Hossain<shahed@medisys.com.my>
  * @version   1.0.00-SNAPSHOT
  * @since     1.0.00-SNAPSHOT
  */

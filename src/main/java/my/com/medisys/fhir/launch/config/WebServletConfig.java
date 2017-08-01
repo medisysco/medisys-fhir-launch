@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
- * @author    Shahed Hossain<shahed@medisys.com.sa>
+ * @author    Shahed Hossain<shahed@medisys.com.my>
  * @version   1.0.00-SNAPSHOT
  * @since     1.0.00-SNAPSHOT
  */
@@ -25,6 +25,7 @@ public class WebServletConfig extends WebMvcConfigurerAdapter {
     private static final Logger log = LoggerFactory.getLogger(WebServletConfig.class);
     
     @Bean
+    //http://localhost:8080/fhir/dstu2/Patient
     public ServletRegistrationBean servletRegistrationBean(ApplicationContext context) {
         return new ServletRegistrationBean(new FhirRestServlet(), "/fhir/dstu2/*");
     }
