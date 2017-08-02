@@ -7,6 +7,7 @@ import java.util.List;
 import my.com.medisys.fhir.launch.provider.OrganizationResourceProvider;
 import my.com.medisys.fhir.launch.provider.PatientResourceProvider;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.cors.CorsConfiguration;
 
 import ca.uhn.fhir.context.FhirContext;
@@ -20,6 +21,7 @@ import ca.uhn.fhir.rest.server.interceptor.ResponseHighlighterInterceptor;
 /**
  * This servlet is the actual FHIR server itself
  */
+@Component
 public class FhirRestServlet extends RestfulServer {
 
 	private static final long serialVersionUID = 1L;
