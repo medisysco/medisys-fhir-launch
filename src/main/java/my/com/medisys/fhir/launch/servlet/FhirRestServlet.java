@@ -6,6 +6,7 @@ import java.util.List;
 
 import my.com.medisys.fhir.launch.provider.OrganizationResourceProvider;
 import my.com.medisys.fhir.launch.provider.PatientResourceProvider;
+import my.com.medisys.fhir.launch.provider.SlotResourceProvider;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.cors.CorsConfiguration;
@@ -44,6 +45,7 @@ public class FhirRestServlet extends RestfulServer {
 		 * type of resource.
 		 */
 		List<IResourceProvider> providers = new ArrayList<IResourceProvider>();
+		providers.add(new SlotResourceProvider());
 		providers.add(new PatientResourceProvider());
 		providers.add(new OrganizationResourceProvider());
 		setResourceProviders(providers);
