@@ -20,8 +20,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.medisys.thymeleaf>3.0.2.RELEASE</version.medisys.thymeleaf>
-        <version.medisys.ca.uhn.hapi>2.5</version.medisys.ca.uhn.hapi>
+        <version.medisys.thymeleaf>3.0.0.RELEASE</version.medisys.thymeleaf>
+        <version.medisys.ca.uhn.hapi>3.0.0</version.medisys.ca.uhn.hapi>
         <maven.build.timestamp.format>EEE, MMM dd yyyy, HH:mm Z</maven.build.timestamp.format>
     </properties>
     
@@ -35,6 +35,21 @@
             <dependency>
                 <groupId>ca.uhn.hapi.fhir</groupId>
                 <artifactId>hapi-fhir-structures-dstu2</artifactId>
+                <version>${version.medisys.ca.uhn.hapi}</version>
+            </dependency>
+            <dependency>
+                <groupId>ca.uhn.hapi.fhir</groupId>
+                <artifactId>hapi-fhir-structures-dstu3</artifactId>
+                <version>${version.medisys.ca.uhn.hapi}</version>
+            </dependency>
+            <dependency>
+                <groupId>ca.uhn.hapi.fhir</groupId>
+                <artifactId>hapi-fhir-server</artifactId>
+                <version>${version.medisys.ca.uhn.hapi}</version>
+            </dependency>
+            <dependency>
+                <groupId>ca.uhn.hapi.fhir</groupId>
+                <artifactId>hapi-fhir-client</artifactId>
                 <version>${version.medisys.ca.uhn.hapi}</version>
             </dependency>
             <dependency>
@@ -67,11 +82,15 @@
         </dependency>
         <dependency>
             <groupId>ca.uhn.hapi.fhir</groupId>
+            <artifactId>hapi-fhir-structures-dstu2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ca.uhn.hapi.fhir</groupId>
             <artifactId>hapi-fhir-base</artifactId>
         </dependency>
         <dependency>
             <groupId>ca.uhn.hapi.fhir</groupId>
-            <artifactId>hapi-fhir-structures-dstu2</artifactId>
+            <artifactId>hapi-fhir-server</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

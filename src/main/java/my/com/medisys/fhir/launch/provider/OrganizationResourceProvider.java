@@ -1,10 +1,7 @@
 package my.com.medisys.fhir.launch.provider;
 
-import my.com.medisys.fhir.launch.model.MyOrganization;
-import ca.uhn.fhir.model.dstu2.composite.ContactPointDt;
+import ca.uhn.fhir.model.dstu2.resource.Organization;
 import ca.uhn.fhir.model.dstu2.valueset.ContactPointUseEnum;
-import ca.uhn.fhir.model.primitive.BooleanDt;
-import ca.uhn.fhir.model.primitive.CodeDt;
 import ca.uhn.fhir.model.primitive.IdDt;
 import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Read;
@@ -16,7 +13,7 @@ import ca.uhn.fhir.rest.server.exceptions.ResourceNotFoundException;
  * which uses a custom subclassed resource definition to add statically bound
  * extensions.
  * 
- * See the MyOrganization definition to see how the custom resource 
+ * See the Organization definition to see how the custom resource 
  * definition works.
  */
 public class OrganizationResourceProvider implements IResourceProvider {
@@ -25,8 +22,8 @@ public class OrganizationResourceProvider implements IResourceProvider {
      * The getResourceType method comes from IResourceProvider, and must be overridden to indicate what type of resource this provider supplies.
      */
     @Override
-    public Class<MyOrganization> getResourceType() {
-        return MyOrganization.class;
+    public Class<Organization> getResourceType() {
+        return Organization.class;
     }
     
     /**
@@ -37,7 +34,7 @@ public class OrganizationResourceProvider implements IResourceProvider {
      * @return Returns a resource matching this identifier, or null if none exists.
      */
     @Read()
-    public MyOrganization getResourceById(@IdParam IdDt theId) {
+    public Organization getResourceById(@IdParam IdDt theId) {
         
         /*
          * We only support one organization, so the follwing
@@ -48,20 +45,20 @@ public class OrganizationResourceProvider implements IResourceProvider {
             throw new ResourceNotFoundException(theId);
         }
         
-        MyOrganization retVal = new MyOrganization();
+        Organization retVal = new Organization();
         retVal.setId("1");
         retVal.addIdentifier().setSystem("urn:example:orgs").setValue("FooOrganization");
         retVal.addAddress().addLine("123 Fake Street").setCity("Toronto");
         retVal.addTelecom().setUse(ContactPointUseEnum.WORK).setValue("1-888-123-4567");
         
         // Populate the first, primitive extension
-        retVal.setBillingCode(new CodeDt("00102-1"));
+        //retVal.setBillingCode(new CodeDt("00102-1"));
         
         // The second extension is repeatable and takes a block type
-        MyOrganization.EmergencyContact contact = new MyOrganization.EmergencyContact();
+        /*Organization.EmergencyContact contact = new Organization.EmergencyContact();
         contact.setActive(new BooleanDt(true));
         contact.setContact(new ContactPointDt());
-        retVal.getEmergencyContact().add(contact);
+        retVal.getEmergencyContact().add(contact);*/
         
         return retVal;
     }
