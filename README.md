@@ -4,11 +4,11 @@ All of the projects of  [Medical Systems Co.][100]  are mavenized, It's a maven 
 
 
 ```xml
-<launch>
+<dependency>
     <artifactId>medisys-fhir-launch</artifactId>
     <groupId>my.com.medisys.fhir</groupId>
     <version>1.0.00-SNAPSHOT</version>
-</launch>
+</dependency>
 ```
 All of the resource and library of [Medical Systems Co.][100] permitted to use under considering `GPL V3` license. Clone the source code from [GitHub][101] at [medisys-fhir-launch][103] `git` repository.
 
@@ -36,7 +36,7 @@ Here is the maven repository of this project. add the repository to `.m2` `setti
 
 <repository>
     <id>medisys.releases</id>
-    <url>http://maven.medisys.com.my/maven2/snapshots/</url>
+    <url>http://mvn.medisys.com.my/m2/snapshots/</url>
     <releases>
         <enabled>true</enabled>
     </releases>
@@ -70,7 +70,7 @@ THE SOFTWARE.
 
 ### About [Medical Systems Co.][100]
 
-`Medisys` is the short form of [Medical Systems Co.][100] is a Riyadh based company which provides full range offers through `HMIS` – Health Management Information Systems starting from analysing requirements, development, application delivery and full range of support for user adaptations. The evolution and migration to Oracle 10g database and `RAC` from previous architecture gave Medisys's `HMIS` (Hospital Management Information System) location transparency, redundancy and volatility on information management.
+`Medisys` is the short form of [Medical Systems Co.][100] is a Riyadh based company which provides full range offers through `HMIS` (Health Management Information Systems) starting from analysing requirements, development, application delivery and full range of support for user adaptations. The evolution and migration to Oracle 10g database and `RAC` from previous architecture gave Medisys's `HMIS` (Hospital Management Information System) location transparency, redundancy and volatility on information management.
 
 
 ### About the Founder

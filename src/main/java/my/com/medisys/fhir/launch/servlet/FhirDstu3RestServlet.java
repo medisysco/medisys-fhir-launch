@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import my.com.medisys.fhir.launch.provider.OrganizationResourceProvider;
-import my.com.medisys.fhir.launch.provider.PatientResourceProvider;
-import my.com.medisys.fhir.launch.provider.SlotResourceProvider;
+import my.com.medisys.fhir.launch.dstu3.provider.OrganizationResourceProvider;
+import my.com.medisys.fhir.launch.dstu3.provider.PatientResourceProvider;
+import my.com.medisys.fhir.launch.dstu3.provider.SlotResourceProvider;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.cors.CorsConfiguration;

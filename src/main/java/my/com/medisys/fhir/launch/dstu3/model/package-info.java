@@ -3,4 +3,4 @@
  * @version   1.0.00-SNAPSHOT
  * @since     1.0.00-SNAPSHOT
  */
-package my.com.medisys.fhir.launch.provider;
+package my.com.medisys.fhir.launch.dstu3.model;

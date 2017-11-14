@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import my.com.medisys.fhir.launch.provider.OrganizationResourceProvider;
-import my.com.medisys.fhir.launch.provider.PatientResourceProvider;
-import my.com.medisys.fhir.launch.provider.SlotResourceProvider;
+import my.com.medisys.fhir.launch.dstu2.provider.OrganizationResourceProvider;
+import my.com.medisys.fhir.launch.dstu2.provider.PatientResourceProvider;
+import my.com.medisys.fhir.launch.dstu2.provider.SlotResourceProvider;
 
-//import org.springframework.stereotype.Component;
+
+import org.springframework.stereotype.Component;
 import org.springframework.web.cors.CorsConfiguration;
 
 import ca.uhn.fhir.context.FhirContext;
@@ -24,7 +25,7 @@ import ca.uhn.fhir.rest.server.interceptor.ResponseHighlighterInterceptor;
  * @version   1.0.00-SNAPSHOT
  * @since     1.0.00-SNAPSHOT
  */
-//@Component
+@Component
 public class FhirDstu2RestServlet extends RestfulServer {
 
     private static final long serialVersionUID = 1L;

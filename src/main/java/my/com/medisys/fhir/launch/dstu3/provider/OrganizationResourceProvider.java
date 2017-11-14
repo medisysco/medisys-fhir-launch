@@ -1,4 +1,4 @@
-package my.com.medisys.fhir.launch.provider;
+package my.com.medisys.fhir.launch.dstu3.provider;
 
 import org.hl7.fhir.dstu3.model.ContactPoint;
 import org.hl7.fhir.dstu3.model.ContactPoint.ContactPointUse;
@@ -23,17 +23,17 @@ public class OrganizationResourceProvider implements IResourceProvider {
     }
 
     @Read()
-    public Organization getResourceById(@IdParam IdType theId) {
-        if (!"1".equals(theId.getValue())) {
-            throw new ResourceNotFoundException(theId);
+    public Organization getResourceById(@IdParam IdType id) {
+        if (!"1".equals(id.getValue())) {
+            throw new ResourceNotFoundException(id);
         }
 
-        Organization retVal = new Organization();
-        retVal.setId("1");
-        retVal.addIdentifier().setSystem("urn:example:orgs").setValue("FooOrganization");
-        retVal.addAddress().addLine("123 Fake Street").setCity("Toronto");
-        retVal.addTelecom(new ContactPoint().setUse(ContactPointUse.WORK).setValue("1-888-123-4567"));
-        return retVal;
+        Organization organization = new Organization();
+        organization.setId("1");
+        organization.addIdentifier().setSystem("urn:example:orgs").setValue("FooOrganization");
+        organization.addAddress().addLine("123 Fake Street").setCity("Toronto");
+        organization.addTelecom(new ContactPoint().setUse(ContactPointUse.WORK).setValue("1-888-123-4567"));
+        return organization;
     }
 
 }

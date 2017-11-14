@@ -1,4 +1,4 @@
-package my.com.medisys.fhir.launch.provider;
+package my.com.medisys.fhir.launch.dstu3.provider;
 
 import java.util.Date;
 import java.util.Deque;
@@ -111,12 +111,12 @@ public class PatientResourceProvider implements IResourceProvider {
 
     @Search()
     public List<Patient> findPatientsByName(@RequiredParam(name = Patient.SP_FAMILY) StringType familyName, @OptionalParam(name = Patient.SP_GIVEN) StringType givenName) {
-        LinkedList<Patient> retVal = new LinkedList<Patient>();
+        LinkedList<Patient> patients = new LinkedList<Patient>();
         for (Deque<Patient> nextPatientList : patientVersions.values()) {
             Patient nextPatient = nextPatientList.getLast();
             NAMELOOP: for (HumanName nextName : nextPatient.getName()) {
                 if (familyName.equals(nextName.getFamily())) {
-                    retVal.add(nextPatient);
+                    patients.add(nextPatient);
                     break NAMELOOP;
                 }
             }
@@ -125,31 +125,31 @@ public class PatientResourceProvider implements IResourceProvider {
         if (givenName != null) {
             log.info("Given Name: {}", givenName.getValueAsString());
         }
-        return retVal;
+        return patients;
     }
 
     @Search
     public List<Patient> findPatientsUsingArbitraryCtriteria() {
-        LinkedList<Patient> retVal = new LinkedList<Patient>();
+        LinkedList<Patient> patients = new LinkedList<Patient>();
         for (Deque<Patient> nextPatientList : patientVersions.values()) {
             Patient nextPatient = nextPatientList.getLast();
-            retVal.add(nextPatient);
+            patients.add(nextPatient);
         }
-        return retVal;
+        return patients;
     }
 
     @Read(version = true)
     public Patient readPatient(@IdParam IdType resourceId) {
-        Deque<Patient> retVal;
+        Deque<Patient> patient;
         try {
-            retVal = patientVersions.get(resourceId.getIdPartAsLong());
+            patient = patientVersions.get(resourceId.getIdPartAsLong());
         } catch (NumberFormatException e) {
             throw new ResourceNotFoundException(resourceId);
         }
         if (resourceId.hasVersionIdPart() == false) {
-            return retVal.getLast();
+            return patient.getLast();
         } else {
-            for (Patient nextVersion : retVal) {
+            for (Patient nextVersion : patient) {
                 String nextVersionId = nextVersion.getId();
                 if (resourceId.getVersionIdPart().equals(nextVersionId)) {
                     return nextVersion;

@@ -1,6 +1,4 @@
 server:
-  port: 8080
-  contextPath: /fhir
   tomcat:
     basedir:  ./target
 error:
