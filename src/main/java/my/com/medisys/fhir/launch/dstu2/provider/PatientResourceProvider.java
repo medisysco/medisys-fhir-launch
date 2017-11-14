@@ -50,7 +50,7 @@ public class PatientResourceProvider implements IResourceProvider {
         Patient shahed = new Patient();
         shahed.setId("998915");
         shahed.addIdentifier();
-        shahed.getIdentifier().get(0).setSystem(new UriDt("urn:hapitest:mrns"));
+        shahed.getIdentifier().get(0).setSystem(new UriDt("urn:medisys:com:my"));
         shahed.getIdentifier().get(0).setValue("998915");
         shahed.addName().addFamily("Hossain");
         shahed.getName().get(0).addGiven("Md Shahed");
@@ -62,7 +62,7 @@ public class PatientResourceProvider implements IResourceProvider {
         Patient shohel = new Patient();
         shohel.setId("998916");
         shohel.addIdentifier();
-        shohel.getIdentifier().get(0).setSystem(new UriDt("urn:hapitest:mrns"));
+        shohel.getIdentifier().get(0).setSystem(new UriDt("urn:medisys:com:my"));
         shohel.getIdentifier().get(0).setValue("998916");
         shohel.addName().addFamily("Hossen");
         shohel.getName().get(0).addGiven("Md Shohel");

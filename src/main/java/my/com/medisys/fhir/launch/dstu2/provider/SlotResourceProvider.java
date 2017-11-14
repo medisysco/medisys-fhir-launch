@@ -37,7 +37,7 @@ public class SlotResourceProvider implements IResourceProvider {
         Slot apt0 = new Slot();
         apt0.setId("998915");
         apt0.addIdentifier();
-        apt0.getIdentifier().get(0).setSystem(new UriDt("urn:hapitest:mrns"));
+        apt0.getIdentifier().get(0).setSystem(new UriDt("urn:medisys:com:my"));
         apt0.getIdentifier().get(0).setValue("998915");
         slot0.add(apt0);
         slots.put(slotId, slot0);
@@ -46,7 +46,7 @@ public class SlotResourceProvider implements IResourceProvider {
         Slot apt1 = new Slot();
         apt1.setId("998916");
         apt1.addIdentifier();
-        apt1.getIdentifier().get(0).setSystem(new UriDt("urn:hapitest:mrns"));
+        apt1.getIdentifier().get(0).setSystem(new UriDt("urn:medisys:com:my"));
         apt1.getIdentifier().get(0).setValue("998916");
         slot1.add(apt1);
         slots.put(slotId, slot1);

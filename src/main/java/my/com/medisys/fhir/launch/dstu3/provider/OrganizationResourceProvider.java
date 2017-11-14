@@ -30,9 +30,9 @@ public class OrganizationResourceProvider implements IResourceProvider {
 
         Organization organization = new Organization();
         organization.setId("1");
-        organization.addIdentifier().setSystem("urn:example:orgs").setValue("FooOrganization");
-        organization.addAddress().addLine("123 Fake Street").setCity("Toronto");
-        organization.addTelecom(new ContactPoint().setUse(ContactPointUse.WORK).setValue("1-888-123-4567"));
+        organization.addIdentifier().setSystem("urn:medisys:com:my").setValue("FooOrganization");
+        organization.addAddress().addLine("JLN 3/50, Off JLN Gombak").setCity("Kuala Lumpur City");
+        organization.addTelecom(new ContactPoint().setUse(ContactPointUse.WORK).setValue("+60112278918"));
         return organization;
     }
 
