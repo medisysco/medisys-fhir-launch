@@ -35,6 +35,11 @@ import ca.uhn.fhir.rest.server.exceptions.InvalidRequestException;
 import ca.uhn.fhir.rest.server.exceptions.ResourceNotFoundException;
 import ca.uhn.fhir.rest.server.exceptions.UnprocessableEntityException;
 
+/**
+ * @author    Medical Systems<devs@medisys.com.my>
+ * @version   1.0.00-SNAPSHOT
+ * @since     1.0.00-SNAPSHOT
+ */
 public class PatientResourceProvider implements IResourceProvider {
 
     private static final Logger log = LoggerFactory.getLogger(PatientResourceProvider.class);
