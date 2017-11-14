@@ -1,6 +1,7 @@
 package my.com.medisys.fhir.launch.config;
 
-import my.com.medisys.fhir.launch.servlet.FhirRestServlet;
+//import my.com.medisys.fhir.launch.servlet.FhirDstu2RestServlet;
+import my.com.medisys.fhir.launch.servlet.FhirDstu3RestServlet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,20 +14,23 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
- * @author    Shahed Hossain<shahed@medisys.com.my>
+ * @author    Medical Systems<devs@medisys.com.my>
  * @version   1.0.00-SNAPSHOT
  * @since     1.0.00-SNAPSHOT
  */
 @Configuration
 @ComponentScan(basePackages= {"my.com.medisys.fhir.launch.beans", "my.com.medisys.fhir.launch.servlet",
         "my.com.medisys.fhir.launch.controller", "my.com.medisys.fhir.launch.service"})
-public class WebServletConfig extends WebMvcConfigurerAdapter {
+public class FhirServletConfig extends WebMvcConfigurerAdapter {
     
     @SuppressWarnings("unused")
-    private static final Logger log = LoggerFactory.getLogger(WebServletConfig.class);
+    private static final Logger log = LoggerFactory.getLogger(FhirServletConfig.class);
+    
+    //@Autowired
+    //FhirDstu2RestServlet fhirDstu2Servlet;
     
     @Autowired
-    FhirRestServlet fhirServlet;
+    FhirDstu3RestServlet fhirDstu3Servlet;
     
     @Bean
     //http://localhost:8080/fhir/dstu2/Patient
@@ -34,8 +38,7 @@ public class WebServletConfig extends WebMvcConfigurerAdapter {
     //http://localhost:8080/fhir/dstu2/Patient?family=Hossain
     //http://localhost:8080/fhir/dstu2/Patient?family=Hossain&given=Shahed
     public ServletRegistrationBean servletRegistrationBean(ApplicationContext context) {
-        //return new ServletRegistrationBean(new FhirRestServlet(), "/fhir/dstu2/*");
-        //return new ServletRegistrationBean(fhirServlet, "/fhir/dstu2/*");
-        return new ServletRegistrationBean(fhirServlet, "/fhir/dstu3/*");
+        //return new ServletRegistrationBean(fhirDstu2Servlet, "/dstu2/*");
+        return new ServletRegistrationBean(fhirDstu3Servlet, "/dstu3/*");
     }
 }

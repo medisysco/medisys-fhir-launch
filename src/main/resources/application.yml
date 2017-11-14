@@ -1,0 +1,41 @@
+server:
+  port: 8080
+  contextPath: /fhir
+  tomcat:
+    basedir: ${user.home}/.hmis/tmp/fhir
+error:
+  path: /error
+  whitelabel:
+    enabled: false
+spring:
+  thymeleaf:
+    prefix: classpath:/META-INF/thymeleaf/
+logging:
+  level:
+    org.springframework: WARN
+    my.com.medisys: INFO
+    com.netflix: WARN
+---
+spring:
+  profiles: dev
+logging:
+  level:
+    org.springframework: WARN
+    my.com.medisys: INFO
+    com.netflix: WARN
+---
+spring:
+  profiles: uat
+logging:
+  level:
+    org.springframework: WARN
+    my.com.medisys: WARN
+    com.netflix: WARN
+---
+spring:
+  profiles: pro
+logging:
+  level:
+    org.springframework: WARN
+    my.com.medisys: WARN
+    com.netflix: WARN

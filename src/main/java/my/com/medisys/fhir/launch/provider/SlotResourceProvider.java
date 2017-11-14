@@ -11,12 +11,16 @@ import org.hl7.fhir.dstu3.model.Slot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-//import ca.uhn.fhir.model.primitive.IdDt;
 import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Read;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 
+/**
+ * @author    Medical Systems<devs@medisys.com.my>
+ * @version   1.0.00-SNAPSHOT
+ * @since     1.0.00-SNAPSHOT
+ */
 public class SlotResourceProvider implements IResourceProvider {
     
     private static final Logger log = LoggerFactory.getLogger(SlotResourceProvider.class);
