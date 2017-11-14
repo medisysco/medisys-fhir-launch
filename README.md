@@ -75,7 +75,7 @@ THE SOFTWARE.
 
 ### About the Founder
 
-[`Mohamad Al-Sherbini(Sherbini)`][201] is the founder of [Medical Systems Co.] [100]. [`Azizul Hoque Bhuyan(Aziz)`][202] is the Technical Manager as well as founder of Medisys (BD) Ltd and Medisys (MY) Ltd.
+[`Mohamad Al-Sherbini(Sherbini)`][201] is the founder of [Medical Systems Co.][100]. [`Azizul Hoque Bhuyan(Aziz)`][202] is the Technical Manager as well as founder of Medisys (BD) Ltd and Medisys (MY) Ltd.
 
 
 ### About the Project
