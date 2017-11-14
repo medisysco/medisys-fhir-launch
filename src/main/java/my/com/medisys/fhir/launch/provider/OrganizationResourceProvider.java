@@ -1,8 +1,11 @@
 package my.com.medisys.fhir.launch.provider;
 
-import ca.uhn.fhir.model.dstu2.resource.Organization;
-import ca.uhn.fhir.model.dstu2.valueset.ContactPointUseEnum;
-import ca.uhn.fhir.model.primitive.IdDt;
+import org.hl7.fhir.dstu3.model.ContactPoint;
+import org.hl7.fhir.dstu3.model.ContactPoint.ContactPointUse;
+import org.hl7.fhir.dstu3.model.IdType;
+import org.hl7.fhir.dstu3.model.Organization;
+
+//import ca.uhn.fhir.model.primitive.IdDt;
 import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Read;
 import ca.uhn.fhir.rest.server.IResourceProvider;
@@ -30,11 +33,11 @@ public class OrganizationResourceProvider implements IResourceProvider {
      * The "@Read" annotation indicates that this method supports the read operation. It takes one argument, the Resource type being returned.
      * 
      * @param theId
-     *            The read operation takes one parameter, which must be of type IdDt and must be annotated with the "@Read.IdParam" annotation.
+     *            The read operation takes one parameter, which must be of type IdType and must be annotated with the "@Read.IdParam" annotation.
      * @return Returns a resource matching this identifier, or null if none exists.
      */
     @Read()
-    public Organization getResourceById(@IdParam IdDt theId) {
+    public Organization getResourceById(@IdParam IdType theId) {
         
         /*
          * We only support one organization, so the follwing
@@ -49,7 +52,7 @@ public class OrganizationResourceProvider implements IResourceProvider {
         retVal.setId("1");
         retVal.addIdentifier().setSystem("urn:example:orgs").setValue("FooOrganization");
         retVal.addAddress().addLine("123 Fake Street").setCity("Toronto");
-        retVal.addTelecom().setUse(ContactPointUseEnum.WORK).setValue("1-888-123-4567");
+        retVal.addTelecom(new ContactPoint().setUse(ContactPointUse.WORK).setValue("1-888-123-4567"));
         
         // Populate the first, primitive extension
         //retVal.setBillingCode(new CodeDt("00102-1"));

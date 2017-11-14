@@ -6,12 +6,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.hl7.fhir.dstu3.model.IdType;
+import org.hl7.fhir.dstu3.model.Slot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ca.uhn.fhir.model.dstu2.resource.Slot;
-import ca.uhn.fhir.model.primitive.IdDt;
-import ca.uhn.fhir.model.primitive.UriDt;
+//import ca.uhn.fhir.model.primitive.IdDt;
 import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Read;
 import ca.uhn.fhir.rest.annotation.Search;
@@ -33,7 +33,7 @@ public class SlotResourceProvider implements IResourceProvider {
         Slot apt0 = new Slot();
         apt0.setId("998915");
         apt0.addIdentifier();
-        apt0.getIdentifier().get(0).setSystem(new UriDt("urn:hapitest:mrns"));
+        apt0.getIdentifier().get(0).setSystem("urn:hapitest:mrns");
         apt0.getIdentifier().get(0).setValue("998915");
         slot0.add(apt0);
         slots.put(slotId, slot0);
@@ -42,7 +42,7 @@ public class SlotResourceProvider implements IResourceProvider {
         Slot apt1 = new Slot();
         apt1.setId("998916");
         apt1.addIdentifier();
-        apt1.getIdentifier().get(0).setSystem(new UriDt("urn:hapitest:mrns"));
+        apt1.getIdentifier().get(0).setSystem("urn:hapitest:mrns");
         apt1.getIdentifier().get(0).setValue("998916");
         slot1.add(apt1);
         slots.put(slotId, slot1);
@@ -55,7 +55,7 @@ public class SlotResourceProvider implements IResourceProvider {
         //validateResource(slot);
         long id = slotNextId++;
         //addNewVersion(thePatient, id);
-        return new MethodOutcome(new IdDt(id));
+        return new MethodOutcome(new IdType(id));
     }*/
     
     
@@ -72,7 +72,7 @@ public class SlotResourceProvider implements IResourceProvider {
     
     @Read
     //@Read(version = true)
-    public Slot readSlot(@IdParam IdDt id) {
+    public Slot readSlot(@IdParam IdType id) {
         log.info("Slot ID: {}", id.getIdPartAsLong());
         Deque<Slot> slot = null;
         

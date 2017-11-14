@@ -31,7 +31,8 @@ public class FhirRestServlet extends RestfulServer {
 	 * Constructor
 	 */
 	public FhirRestServlet() {
-		super(FhirContext.forDstu2()); // Support DSTU2
+		//super(FhirContext.forDstu2()); // Support DSTU2
+		super(FhirContext.forDstu3());
 	}
 	
 	/**
