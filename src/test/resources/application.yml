@@ -8,6 +8,7 @@ error:
 spring:
   thymeleaf:
     prefix: classpath:/META-INF/thymeleaf/
+    mode: HTML
 logging:
   level:
     org.springframework: WARN
